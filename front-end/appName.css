@@ -1,0 +1,8 @@
+html,
+body {
+	height: 100%;
+}
+
+.inner-wrap {
+	min-height: 600px;
+}

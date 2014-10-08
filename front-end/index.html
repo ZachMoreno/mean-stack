@@ -4,25 +4,59 @@
 <!--[if IE 8]>         <html lang="en" ng-app="appName" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en" ng-app="appName" class="no-js"> <!--<![endif]-->
   <head>
+    <!-- meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>appName</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="appName.css">
+    <!-- css -->
+      <!-- normalize -->
+      <link rel="stylesheet" href="bower_components/foundation/css/normalize.css">
+
+      <!-- foundation -->
+      <link rel="stylesheet" href="bower_components/foundation/css/foundation.css">
+
+      <!-- appName -->
+      <link rel="stylesheet" href="appName.css">
   </head>
 
   <body>
-    <ul class="menu">
-      <li><a href="#/home">home</a></li>
-    </ul>
+    <div class="off-canvas-wrap" data-offcanvas>
+  <div class="inner-wrap">
+    <nav class="tab-bar">
+      <section class="left-small">
+        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+      </section>
 
-    <!--[if lt IE 7]>
-        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+      <section class="middle tab-bar-section">
+        <h1 class="title">appName</h1>
+      </section>
+    </nav>
 
-    <div ng-view></div>
+    <aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+        <li><a href="#/home">home</a></li>
+        <li><a href="#/create">create</a></li>
+        <li><a href="#/edit">edit</a></li>
+        <li><a href="#/list">list</a></li>
+        <li><a href="#/delete">delete</a></li>
+      </ul>
+    </aside>
+
+    <section class="main-section">
+      <!--[if lt IE 7]>
+          <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+
+      <div ng-view></div>
+    </section>
+
+  <a class="exit-off-canvas"></a>
+
+  </div>
+  </div>
 
     <!-- js -->
       <!-- angular -->
@@ -30,6 +64,15 @@
 
       <!-- angular-route -->
       <script src="bower_components/angular-route/angular-route.js"></script>
+
+      <!-- jquery -->
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+
+      <!-- foundation -->
+      <script src="bower_components/foundation/js/foundation.js"></script>
+      <script>
+        $(document).foundation();
+      </script>
 
       <!-- app -->
       <script src="appName.js"></script>
