@@ -5,7 +5,11 @@ angular.module('appName', [
   'ngRoute',
 
   // views
-  'appName.home'
+  'appName.home',
+  'appName.create',
+  'appName.edit',
+  'appName.list',
+  'appName.delete'
 ])
 
 // default route

@@ -23,8 +23,6 @@
   </head>
 
   <body>
-    <div class="off-canvas-wrap" data-offcanvas>
-  <div class="inner-wrap">
     <nav class="tab-bar">
       <section class="left-small">
         <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
@@ -35,28 +33,33 @@
       </section>
     </nav>
 
-    <aside class="left-off-canvas-menu">
-      <ul class="off-canvas-list">
-        <li><a href="#/home">home</a></li>
-        <li><a href="#/create">create</a></li>
-        <li><a href="#/edit">edit</a></li>
-        <li><a href="#/list">list</a></li>
-        <li><a href="#/delete">delete</a></li>
-      </ul>
-    </aside>
+    <div class="off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+        <aside class="left-off-canvas-menu">
+          <ul class="off-canvas-list">
+            <li><a href="#/home">home</a></li>
+            <li><a href="#/create">create</a></li>
+            <li><a href="#/edit">edit</a></li>
+            <li><a href="#/list">list</a></li>
+            <li><a href="#/delete">delete</a></li>
+          </ul> <!-- end .off-canvas-list -->
+        </aside> <!-- end .left-off-canvas-menu -->
 
-    <section class="main-section">
-      <!--[if lt IE 7]>
-          <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-      <![endif]-->
+        <section class="main-section">
+          <!--[if lt IE 7]>
+              <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+          <![endif]-->
 
-      <div ng-view></div>
-    </section>
+          <div ng-view>
+            <!-- view content -->
+          </div>
 
-  <a class="exit-off-canvas"></a>
+        </section> <!-- end .main-section -->
 
-  </div>
-  </div>
+        <a class="exit-off-canvas"></a>
+
+      </div> <!-- end .inner-wrap -->
+    </div> <!-- end .off-canvas-wrap -->
 
     <!-- js -->
       <!-- angular -->
@@ -79,5 +82,9 @@
 
       <!-- views -->
       <script src="home/home.js"></script>
+      <script src="create/create.js"></script>
+      <script src="edit/edit.js"></script>
+      <script src="list/list.js"></script>
+      <script src="delete/delete.js"></script>
   </body>
 </html>
