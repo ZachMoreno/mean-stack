@@ -4,7 +4,7 @@ angular.module('appName.edit', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/edit', {
-		templateUrl: 'edit/edit.html',
+		templateUrl: 'views/edit/edit.html',
 		controller: 'EditCtrl'
 	});
 }])

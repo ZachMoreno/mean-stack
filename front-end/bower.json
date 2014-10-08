@@ -5,7 +5,7 @@
     "Zachariah Moreno <xachmoreno@gmail.com>"
   ],
   "description": "custom MEAN stack",
-  "main": "index.html",
+  "main": "front-end/index.html",
   "license": "MIT",
   "homepage": "https://github.com/ZachMoreno/mean-stack",
   "private": true,

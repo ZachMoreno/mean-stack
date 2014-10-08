@@ -4,7 +4,7 @@ angular.module('appName.create', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/create', {
-		templateUrl: 'create/create.html',
+		templateUrl: 'views/create/create.html',
 		controller: 'CreateCtrl'
 	});
 }])

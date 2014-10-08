@@ -4,7 +4,7 @@ angular.module('appName.delete', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/delete', {
-		templateUrl: 'delete/delete.html',
+		templateUrl: 'views/delete/delete.html',
 		controller: 'DeleteCtrl'
 	});
 }])
