@@ -1,0 +1,19 @@
+{
+  "name": "mean-stack",
+  "version": "0.0.1",
+  "authors": [
+    "Zachariah Moreno <xachmoreno@gmail.com>"
+  ],
+  "description": "custom MEAN stack",
+  "main": "front-end/index.html",
+  "license": "MIT",
+  "homepage": "https://github.com/ZachMoreno/mean-stack",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
