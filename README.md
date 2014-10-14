@@ -1,4 +1,4 @@
-Custom MEAN Stack
+[Custom MEAN Stack](http://zachmoreno.github.io/mean-stack/front-end)
 ============
 
 ## Dependencies
