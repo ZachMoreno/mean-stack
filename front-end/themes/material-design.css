@@ -1,6 +1,6 @@
 .material-design nav.tab-bar {
 	box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
-	z-index: 1;
+	/*z-index: 1;*/
 }
 
 .material-design nav.tab-bar.small {
@@ -53,7 +53,7 @@
 }
 
 .material-design .card:first-of-type {
-	/*margin-top: -40px;*/
+	margin-top: -40px;
 }
 
 .material-design .card {
@@ -67,12 +67,14 @@
 .material-design .fab {
 	border-radius: 100%;
 	margin: 0;
-	padding: 15px;
+	padding: 12px;
 	font-size: 26px;
 	width: 56px;
 	height: 56px;
 	box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
 	outline: 0 !important;
+	position: absolute;
+	top: -30px;
 }
 
 .material-design .fab.yellow {
