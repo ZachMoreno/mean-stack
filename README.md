@@ -3,22 +3,22 @@ Custom MEAN Stack
 
 ## Dependencies
  - Back Ends
-  - Node.js
-   - Express.js
-   - MongoDB
-   - Mongoose
-  - Firebase
-   - Angular-Fire
-    - Route-Security
-    - Simple-Login-Tools
+   - Node.js
+     - Express.js
+     - MongoDB
+       - Mongoose
+   - Firebase
+     - Angular-Fire
+       - Route-Security
+       - Simple-Login-Tools
 
  - Front End
-  - AngularJS
-   - Angular-Route
-  - Foundation Framework
-   - jQuery
-   - FastClick
-   - Modernizr
+   - AngularJS
+     - Angular-Route
+   - Foundation Framework
+     - jQuery
+     - FastClick
+     - Modernizr
 
 ## Tools
  - NPM
@@ -43,6 +43,6 @@ Custom MEAN Stack
  3. ...
 
 ## Themes
- - [Material Design](https://github.com/ZachMoreno/mean-stack/front-end/themes)
+ - [Material Design](https://github.com/ZachMoreno/mean-stack/tree/master/front-end/themes)
 
 
