@@ -2,7 +2,7 @@
 ============
 
 ## Dependencies
- - Back Ends
+ - Back End Options
    - Node.js
      - Express.js
      - MongoDB
