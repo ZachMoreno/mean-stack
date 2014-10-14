@@ -1,0 +1,81 @@
+.material-design nav.tab-bar {
+	box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
+	z-index: 1;
+}
+
+.material-design nav.tab-bar.small {
+	min-height: 71px;
+}
+
+.material-design nav.tab-bar.medium {
+	min-height: 112px;
+}
+
+.material-design nav.tab-bar.tall {
+	min-height: 168px;
+}
+
+.material-design nav.tab-bar.cyan {
+	border-top: 25px solid #0097A7;
+	background-color: #00bcd4;
+}
+
+.material-design nav.tab-bar .left-small,
+.material-design nav.tab-bar .right-small {
+	border: none;
+}
+
+.material-design .left-off-canvas-menu,
+.material-design .right-off-canvas-menu {
+	background-color: #e5e5e5;
+}
+
+.material-design ul.off-canvas-list li a {
+	color: rgba(44, 44, 44, 1);
+	border-bottom: none;
+}
+
+.material-design ul.off-canvas-list li a:hover {
+	/*background-color: #CFCFCF;*/
+	background-color: white;
+	margin: 0px;
+	box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
+	border-radius: 2px;
+}
+
+.material-design .offcanvas-overlap .exit-off-canvas {
+	background: rgba(0,0,0,.5);
+}
+
+.material-design .off-canvas-wrap {
+	background-color: #e5e5e5;
+	/*z-index: 2;*/
+}
+
+.material-design .card:first-of-type {
+	/*margin-top: -40px;*/
+}
+
+.material-design .card {
+	background-color: white;
+	margin: 25px 0px;
+	padding: 20px;
+	box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
+	border-radius: 2px;
+}
+
+.material-design .fab {
+	border-radius: 100%;
+	margin: 0;
+	padding: 15px;
+	font-size: 26px;
+	width: 56px;
+	height: 56px;
+	box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
+	outline: 0 !important;
+}
+
+.material-design .fab.yellow {
+	background-color: #ffeb3b;
+	color: #ff8f00;
+}

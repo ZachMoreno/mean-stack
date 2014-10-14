@@ -18,23 +18,27 @@
       <!-- foundation -->
       <link rel="stylesheet" href="bower_components/foundation/css/foundation.css">
 
+      <!-- theme -->
+      <link rel="stylesheet" href="themes/material-design.css">
+
       <!-- appName -->
       <link rel="stylesheet" href="appName.css">
   </head>
 
   <body class="material-design">
-    <nav class="tab-bar tall cyan">
+    <div class="off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+      <nav class="tab-bar tall cyan">
       <section class="left-small">
-        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+        <a class="left-off-canvas-toggle menu-icon" href=""><span></span></a>
       </section>
 
       <section class="middle tab-bar-section">
-        <h1 class="app-name">appName</h1>
+        <h1 class="app-name"><a href="#" alt="home">appName</a></h1>
       </section>
     </nav>
 
-    <div class="off-canvas-wrap" data-offcanvas>
-      <div class="inner-wrap">
+    
         <aside class="left-off-canvas-menu cyan">
           <ul class="off-canvas-list">
             <li><a href="#/home">home</a></li>
@@ -74,7 +78,16 @@
       <!-- foundation -->
       <script src="bower_components/foundation/js/foundation.js"></script>
       <script>
-        $(document).foundation();
+        $(document).foundation({
+          offcanvas : {
+            // Sets method in which offcanvas opens.
+            // [ move | overlap_single | overlap ]
+            open_method: 'overlap', 
+            // Should the menu close when a menu link is clicked?
+            // [ true | false ]
+            close_on_click : true
+          }
+        });
       </script>
 
       <!-- app -->
