@@ -11,7 +11,8 @@ angular.module('appName', [
   'appName.create',
   'appName.edit',
   'appName.list',
-  'appName.delete'
+  'appName.delete',
+  'appName.style'
 ])
 
 // default route

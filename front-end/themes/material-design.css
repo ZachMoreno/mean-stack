@@ -148,4 +148,13 @@
 	color: #ff6f00;
 }
 
+.card-enter {
+	-webkit-transition: 1s linear all; /* Chrome */
+	transition: 1s linear all;
+	opacity: 0;
+}
+
+.card-enter.card-enter-active {
+	opacity: 1;
+}
 
