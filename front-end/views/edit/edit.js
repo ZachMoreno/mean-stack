@@ -9,6 +9,10 @@ angular.module('appName.edit', ['ngRoute'])
 	});
 }])
 
-.controller('EditCtrl', ['$scope', function($scope) {
+.controller('EditCtrl', ['$scope', 'toaster', function($scope, toaster) {
 	$scope.pageTitle = "Edit";
+
+	$scope.fabClick = function(){
+		toaster.pop('success', "FAB Clicked", "So cool");
+	};
 }]);

@@ -9,6 +9,10 @@ angular.module('appName.list', ['ngRoute'])
 	});
 }])
 
-.controller('ListCtrl', ['$scope', function($scope) {
+.controller('ListCtrl', ['$scope', 'toaster', function($scope, toaster) {
 	$scope.pageTitle = "List";
+
+	$scope.fabClick = function(){
+		toaster.pop('success', "FAB Clicked", "So cool");
+	};
 }]);

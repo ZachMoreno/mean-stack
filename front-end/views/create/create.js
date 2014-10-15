@@ -9,6 +9,10 @@ angular.module('appName.create', ['ngRoute'])
 	});
 }])
 
-.controller('CreateCtrl', ['$scope', function($scope) {
+.controller('CreateCtrl', ['$scope', 'toaster', function($scope, toaster) {
 	$scope.pageTitle = "Create";
+
+	$scope.fabClick = function(){
+		toaster.pop('success', "FAB Clicked", "So cool");
+	};
 }]);

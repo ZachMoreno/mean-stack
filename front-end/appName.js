@@ -3,6 +3,8 @@
 angular.module('appName', [
   // global dependencies
   'ngRoute',
+  'ngAnimate',
+  'toaster',
 
   // views
   'appName.home',
