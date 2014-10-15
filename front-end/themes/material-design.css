@@ -1,3 +1,8 @@
+
+/* ///-----------------------
+		header area
+-----------------------/// */
+
 .material-design nav.tab-bar {
 	box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
 	/*z-index: 1;*/
@@ -25,11 +30,17 @@
 	border: none;
 }
 
+
+/* ///-----------------------
+		off canvas
+-----------------------/// */
+
 .material-design .left-off-canvas-menu,
 .material-design .right-off-canvas-menu {
 	background-color: #e5e5e5;
 }
 
+/* ///--- off canvas left & right  drop shadow ---/// */
 .material-design .left-off-canvas-menu {
 	box-shadow: 6px 0px 6px rgba(0,0,0,.16);
 }
@@ -38,7 +49,8 @@
 	box-shadow: -6px 0px 6px rgba(0,0,0,.16);
 }
 
-.material-design ul.off-canvas-list li label:first-of-type {
+/* ///--- app name ---/// */
+.material-design ul.off-canvas-list li#app-name label {
 	height: 63px;
 	background: #E5E5E5;
 	font-size: 36px;
@@ -47,31 +59,56 @@
 	border-bottom: 1px solid rgba(153, 153, 153, 0.39);
 }
 
+/* ///--- credit verb ---/// */
+.material-design ul.off-canvas-list li#credits label {
+	font-size: 14px;
+	font-weight: 200;
+	text-align: center;
+	text-transform: capitalize;
+	padding-top: 22px;
+	position: absolute;
+	bottom: 16px;
+	border-top: 1px solid rgba(153, 153, 153, 0.5);
+	width: 100%;
+	background-color: rgb(229, 229, 229);
+}
+
+/* ///--- credit name ---/// */
+.material-design ul.off-canvas-list li#credits label strong {
+	font-weight: 500;
+}
+
+/* ///--- menu item ---/// */
 .material-design ul.off-canvas-list li a {
 	color: rgba(44, 44, 44, 1);
 	border-bottom: none;
 }
 
+/* ///--- menu item hover ---/// */
 .material-design ul.off-canvas-list li a:hover {
 	/*background-color: #CFCFCF;*/
 	background-color: white;
 	margin: 0px;
-	box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
+	/*box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);*/
+	box-shadow: inset 0 0 3px #000000;
 }
 
+/* ///--- menu active content overlay ---/// */
 .material-design .offcanvas-overlap .exit-off-canvas {
 	background: rgba(0,0,0,.5);
 }
 
+/* ///--- deepest background ---/// */
 .material-design .off-canvas-wrap {
 	background-color: #e5e5e5;
-	/*z-index: 2;*/
 }
 
+/* ///--- pull first car up ---/// */
 .material-design .card:first-of-type {
 	margin-top: -70px;
 }
 
+/* ///--- basic card ---/// */
 .material-design .card {
 	background-color: white;
 	margin: 25px 0px;
@@ -80,6 +117,7 @@
 	border-radius: 2px;
 }
 
+/* ///--- floating action button ---/// */
 .material-design .fab {
 	border-radius: 100%;
 	margin: 0;
@@ -94,10 +132,12 @@
 	top: -30px;
 }
 
+/* ///--- floating action button hover ---/// */
 .material-design .fab:hover {
 	box-shadow: 0 6px 6px rgba(0,0,0,.16),0 6px 6px rgba(0,0,0,.23);
 }
 
+/* ///--- yellow 500 ---/// */
 .material-design .fab.yellow {
 	background-color: #ffeb3b;
 	color: #ff8f00;
