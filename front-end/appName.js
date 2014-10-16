@@ -5,6 +5,7 @@ angular.module('appName', [
   'ngRoute',
   'ngAnimate',
   'toaster',
+  'ngProgress',
 
   // views
   'appName.home',

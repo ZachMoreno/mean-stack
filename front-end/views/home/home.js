@@ -9,10 +9,14 @@ angular.module('appName.home', ['ngRoute'])
 	});
 }])
 
-.controller('HomeCtrl', ['$scope', 'toaster', function($scope, toaster) {
+.controller('HomeCtrl', ['$scope', '$timeout', 'toaster', 'ngProgress', function($scope, $timeout, toaster, ngProgress) {
 	$scope.pageTitle = "Home";
 
 	$scope.fabClick = function(){
-		toaster.pop('success', "FAB Clicked", "So cool");
+		// toaster.pop('success', "FAB Clicked", "So cool");
+		ngProgress.color('#FDD835');
+		ngProgress.height('2px');
+		ngProgress.start();
+		ngProgress.complete();
 	};
 }]);
