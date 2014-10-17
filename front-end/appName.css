@@ -3,13 +3,36 @@ body {
 	height: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+dt,
+dd,
+th,
+td,
+button,
+input,
+textarea,
+label,
+p {
+	font-family: 'Roboto', sans-serif;
+}
+
 .inner-wrap {
 	min-height: 100vh;
 }
 
+.app-name a strong {
+	font-weight: 400;
+}
+
 .app-name a {
 	color: white;
-	font-weight: 300;
+	font-weight: 100;
 	font-size: 28px;
 }
 
