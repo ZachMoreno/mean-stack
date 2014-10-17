@@ -8,10 +8,10 @@ var express    = require('express'),
 	router     = express.Router(),
 	app        = express();
 
-// parse request & response bodies with body-parser middleware
+// parse request & response bodies with middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-  extended: true
+	extended: true
 }));
 
 // name of REST API resource == corals
@@ -82,6 +82,6 @@ router.route('/api/v1/corals:id')
 		});
 	});
 
-
 app.use(router);
 app.listen(port);
+console.log('Successfully started back-end server running @ http://localhost:' + port + '/api/v1/corals');
