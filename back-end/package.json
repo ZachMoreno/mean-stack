@@ -9,7 +9,8 @@
   "author": "Zachariah Moreno",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.9.5",
-    "mongoose": "^3.8.17"
+    "body-parser": "latest",
+    "express": "latest",
+    "mongoose": "latest"
   }
 }

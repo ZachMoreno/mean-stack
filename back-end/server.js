@@ -1,43 +1,87 @@
 'use strict';
 
-// dependencies
-var express = require('express');
-var routes  = require('./routes');
-var users   = require('./routes/users');
-var http    = require('http');
-var path    = require('path');
-var mongoose = require('mongoose');
+// server-side dependencies
+var express    = require('express'),
+	mongoose   = require('mongoose'),
+	bodyParser = require('body-parser'),
+	port       = process.env.PORT || 7000,
+	router     = express.Router(),
+	app        = express();
 
-// instantiate new app
-var app = express();
+// parse request & response bodies with body-parser middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
-// config all environment 
-app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-app.use(express.favicon());
-app.use(express.logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded());
-app.use(express.methodOverride());
-app.use(express.router);
-app.use(express.static(path.join(__dirname, 'public')));
+// name of REST API resource == corals
+mongoose.connect('mongodb://localhost/corals');
 
-// config dev environment only
-if ('development' == app.get('env')) {
-	app.use(express.errorHandler());
-
-	// connect mongoose to mongoDB
-	mongoose.connect('mongodb://localhost/test1DB');
-};
-
-app.get('/', function(req, res) {
-	res.send('Welcome to your new API');
+// corals schema definition
+var coralSchema = mongoose.Schema({
+	name: String,
+	type: String
 });
 
-http.createServer(app).listen(app.get('port'), function() {
-	console.log('Express server is running on port ' + app.port);
-});
+// new model for Coral
+var Coral = mongoose.model('Coral', coralSchema);
+
+// API endpoint routes
+router.route('/api/v1/corals')
+	// returns all corals
+	.get(function(req, res) {
+		Coral.find(function(err, corals) {
+			if(err) {
+				res.send(err);
+			} else {
+				res.send(corals);
+			}
+		});
+	})
+
+	// create new coral
+	.post(function(req, res) {
+		var coral = new Coral();
+		coral.name = req.body.name;
+		coral.type = req.body.type;
+
+		coral.save(function(err) {
+			if(err) {
+				res.send(err);
+			} else {
+				res.send({ message : "coral successfully created" });
+			}
+		});
+	});
+
+router.route('/api/v1/corals:id')
+	// update an existing coral based on its ID
+	.put(function(req, res) {
+		Coral.findOne({ _id : req.params.id }, function(err, coral) {
+			coral.name = req.body.name;
+			coral.type = req.body.type;
+
+			coral.save(function(err) {
+				if(err) {
+					res.send(err);
+				} else {
+					res.send({ message: "coral successfully updated" });
+				}
+			});
+		})
+	})
+
+	// delete an existing coral based on its ID
+	.delete(function(req, res) {
+		Coral.remove({ _id : req.params.id }, function(err, coral) {
+			if(err) {
+				res.send(err);
+			} else {
+				res.send({ message : "coral successfully deleted" });
+			}
+		});
+	});
 
 
-
+app.use(router);
+app.listen(port);
