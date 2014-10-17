@@ -3,6 +3,7 @@
 angular.module('appName', [
   // global dependencies
   'ngRoute',
+  'ngResource',
   'ngAnimate',
   'toaster',
   'ngProgress',
@@ -13,7 +14,10 @@ angular.module('appName', [
   'appName.edit',
   'appName.list',
   'appName.delete',
-  'appName.style'
+  'appName.style',
+
+  // services
+  'appName.coralService'
 ])
 
 // default route

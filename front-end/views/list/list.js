@@ -9,10 +9,13 @@ angular.module('appName.list', ['ngRoute'])
 	});
 }])
 
-.controller('ListCtrl', ['$scope', 'toaster', function($scope, toaster) {
+.controller('ListCtrl', ['$scope', '$resource', 'toaster', 'Corals', function($scope, $resource, toaster, Corals) {
 	$scope.pageTitle = "List";
 
 	$scope.fabClick = function(){
 		toaster.pop('success', "FAB Clicked", "So cool");
 	};
+
+	// query for all corals & bind to view
+	$scope.corals = Corals.query();
 }]);

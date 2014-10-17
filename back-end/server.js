@@ -8,6 +8,14 @@ var express    = require('express'),
 	router     = express.Router(),
 	app        = express();
 
+// http://enable-cors.org/server_expressjs.html
+app.all('*', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,HEAD,DELETE,OPTIONS');
+  res.header("Access-Control-Allow-Headers", "content-Type,X-Requested-With");
+  next();
+});
+
 // parse request & response bodies with middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -54,7 +62,7 @@ router.route('/api/v1/corals')
 		});
 	});
 
-router.route('/api/v1/corals:id')
+router.route('/api/v1/corals/:id')
 	// update an existing coral based on its ID
 	.put(function(req, res) {
 		Coral.findOne({ _id : req.params.id }, function(err, coral) {

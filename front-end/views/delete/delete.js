@@ -9,7 +9,7 @@ angular.module('appName.delete', ['ngRoute'])
 	});
 }])
 
-.controller('DeleteCtrl', ['$scope', 'toaster', function($scope, toaster) {
+.controller('DeleteCtrl', ['$scope', '$resource', 'toaster', function($scope, $resource, toaster) {
 	$scope.pageTitle = "Delete";
 
 	$scope.fabClick = function(){

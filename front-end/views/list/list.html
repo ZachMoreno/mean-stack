@@ -7,7 +7,9 @@
 		</div> <!-- end .card -->
 
 		<div class="card">
-			<h1>2<sup>nd</sup> Card</h1>
+			<h4 ng-repeat="coral in corals">
+				{{ coral.name }} {{ coral.type }} <small>{{ coral._id }}</small>
+			</h4>
 		</div> <!-- end .card -->
 	</div> <!-- end .small-10 -->
 

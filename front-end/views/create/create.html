@@ -7,7 +7,11 @@
 		</div> <!-- end .card -->
 
 		<div class="card">
-			<h1>2<sup>nd</sup> Card</h1>
+			<form ng-submit="create()" name="createForm" role="form">
+				<input type="text" name="name" ng-model="name" required placeholder="Coral Name"/>
+				<input type="text" name="type" ng-model="type" required placeholder="Coral Type"/>
+				<button type="submit">Create</button>
+			</form>
 		</div> <!-- end .card -->
 	</div> <!-- end .small-10 -->
 
