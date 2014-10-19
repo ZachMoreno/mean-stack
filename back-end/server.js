@@ -22,84 +22,88 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 
-// name of REST API resource == corals
-mongoose.connect('mongodb://localhost/corals');
+// name of REST API resource == items
+mongoose.connect('mongodb://localhost/items');
 
-// corals schema definition
-var coralSchema = mongoose.Schema({
+// items schema definition
+var itemSchema = mongoose.Schema({
+	createdOn: String,
 	name: String,
 	type: String
 });
 
-// new model for Coral
-var Coral = mongoose.model('Coral', coralSchema);
+// new model for Item
+var Item = mongoose.model('Item', itemSchema);
 
 // API endpoint routes
-router.route('/api/v1/corals')
-	// returns all corals
+router.route('/api/v1/items')
+	// returns all items
 	.get(function(req, res) {
-		Coral.find(function(err, corals) {
+		Item.find(function(err, items) {
 			if(err) {
 				res.send(err);
 			} else {
-				res.send(corals);
+				res.send(items);
 			}
 		});
 	})
 
-	// create new coral
+	// create new item
 	.post(function(req, res) {
-		var coral = new Coral();
-		coral.name = req.body.name;
-		coral.type = req.body.type;
+		var item = new Item();
+		item.createdOn = req.body.createdOn;
+		item.name      = req.body.name;
+		item.type      = req.body.type;
 
-		coral.save(function(err) {
+		item.save(function(err) {
 			if(err) {
 				res.send(err);
 			} else {
-				res.send({ message : "coral successfully created" });
+				res.send({ message : "item successfully created" });
 			}
 		});
 	});
 
-router.route('/api/v1/corals/:id')
+router.route('/api/v1/items/:id')
 	.get(function(req, res) {
-		Coral.findOne({ _id : req.params.id }, function(err, coral) {
+		Item.findOne({ _id : req.params.id }, function(err, item) {
 			if(err) {
 				res.send(err);
 			} else {
-				res.send(coral);
+				res.send(item);
 			}
 		});
 	})
 
-	// update an existing coral based on its ID
+	// update an existing item based on its ID
 	.put(function(req, res) {
-		Coral.findOne({ _id : req.params.id }, function(err, coral) {
-			coral.name = req.body.name;
-			coral.type = req.body.type;
+		Item.findOne({ _id : req.params.id }, function(err, item) {
+			item.createdOn = req.body.createdOn;
+			item.name      = req.body.name;
+			item.type      = req.body.type;
 
-			coral.save(function(err) {
+			item.save(function(err) {
 				if(err) {
 					res.send(err);
 				} else {
-					res.send({ message: "coral successfully updated" });
+					res.send({ message: "item successfully updated" });
 				}
 			});
 		})
 	})
 
-	// delete an existing coral based on its ID
+	// delete an existing item based on its ID
 	.delete(function(req, res) {
-		Coral.remove({ _id : req.params.id }, function(err, coral) {
+		Item.remove({ _id : req.params.id }, function(err, item) {
 			if(err) {
 				res.send(err);
 			} else {
-				res.send({ message : "coral successfully deleted" });
+				res.send({ message : "item successfully deleted" });
 			}
 		});
 	});
 
 app.use(router);
-app.listen(port);
-console.log('Successfully started back-end server running @ http://localhost:' + port + '/api/v1/corals');
+app.listen(port, function() {
+	console.log('Successfully started back-end server running @ http://localhost:' + port + '/api/v1/items');
+});
