@@ -63,6 +63,16 @@ router.route('/api/v1/corals')
 	});
 
 router.route('/api/v1/corals/:id')
+	.get(function(req, res) {
+		Coral.findOne({ _id : req.params.id }, function(err, coral) {
+			if(err) {
+				res.send(err);
+			} else {
+				res.send(coral);
+			}
+		});
+	})
+
 	// update an existing coral based on its ID
 	.put(function(req, res) {
 		Coral.findOne({ _id : req.params.id }, function(err, coral) {

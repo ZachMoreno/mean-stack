@@ -8,9 +8,19 @@
 
 		<div class="card">
 			<form ng-submit="create()" name="createForm" role="form">
-				<input type="text" name="name" ng-model="name" required placeholder="Coral Name"/>
-				<input type="text" name="type" ng-model="type" required placeholder="Coral Type"/>
-				<button type="submit">Create</button>
+				<div class="row">
+					<div class="column small-5">
+						<input type="text" name="name" ng-model="name" required placeholder="Coral Name"/>
+					</div> <!-- end .small-5 -->
+
+					<div class="column small-5">
+						<input type="text" name="type" ng-model="type" required placeholder="Coral Type"/>
+					</div> <!-- end .small-5 -->
+
+					<div class="column small-2">
+						<button type="submit" class="button tiny round">Create</button>
+					</div> <!-- end .small-2 -->
+				</div> <!-- end .row -->
 			</form>
 		</div> <!-- end .card -->
 	</div> <!-- end .small-10 -->
