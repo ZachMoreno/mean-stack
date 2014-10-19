@@ -9,7 +9,7 @@ angular.module('appName.create', ['ngRoute'])
 	});
 }])
 
-.controller('CreateCtrl', ['$scope', '$resource', '$location', 'toaster', 'Corals', function($scope, $resource, $location, toaster, Corals) {
+.controller('CreateCtrl', ['$scope', '$resource', '$location', 'toaster', 'Items', function($scope, $resource, $location, toaster, Items) {
 	$scope.pageTitle = "Create";
 
 	$scope.fabClick = function(){
@@ -24,13 +24,13 @@ angular.module('appName.create', ['ngRoute'])
 			toaster.pop('warning', "Please", "enter a type");
 		}
 
-		var coral = new Corals();
-			coral.name = $scope.name;
-			coral.type = $scope.type;
+		var coral = new Items();
+			coral.createdOn = Date.now();
+			coral.name      = $scope.name;
+			coral.type      = $scope.type;
 			coral.$save(function() {
 				// $location.path('/list');
 				toaster.pop('success', "Awesome", "successfully created your new item");
-				toaster.pop('info', "Navigating", "you to List view");
 			});
 	}
 }]);

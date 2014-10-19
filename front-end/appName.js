@@ -17,7 +17,7 @@ angular.module('appName', [
   'appName.style',
 
   // services
-  'appName.coralService'
+  'appName.itemService'
 ])
 
 // default route

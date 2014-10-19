@@ -6,9 +6,9 @@
 			<h1 class="page-title">{{ pageTitle }}</h1>
 		</div> <!-- end .card -->
 
-		<div class="card">
-			<h4 ng-repeat="coral in corals">
-				<a href="" ng-click="delete(coral)">delete</a> - {{ coral.name }} {{ coral.type }}
+		<div ng-repeat="item in items" class="card">
+			<h4>
+				<a href="" ng-click="delete(item)" class="button tiny alert round">delete</a> - {{ item.name }} {{ item.type }}
 			</h4>
 		</div> <!-- end .card -->
 	</div> <!-- end .small-10 -->

@@ -165,6 +165,28 @@
 		typography
 -----------------------/// */
 
-.subheader {
+.material-design .subheader {
 	font-weight: 300;
 }
+
+.material-design .date-time-overlay {
+	background-color: white;
+	padding: 5px;
+	float: right;
+	box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
+	margin-right: -30px;
+	/*margin-top: -10px;*/
+	border-radius: 2px;
+}
+
+.material-design .date-time-overlay.yellow {
+	background-color: #ffeb3b;
+	color: #ff8f00;
+}
+
+.material-design .date-time-overlay.cyan {
+	background-color: #00bcd4;
+	color: white;
+}
+
+

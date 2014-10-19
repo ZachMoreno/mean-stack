@@ -6,10 +6,17 @@
 			<h1 class="page-title">{{ pageTitle }}</h1>
 		</div> <!-- end .card -->
 
-		<div class="card">
-			<h4 ng-repeat="coral in corals">
-				{{ coral.name }} {{ coral.type }} <small>{{ coral._id }}</small>
+		<div ng-repeat="item in items | orderBy:createdOn:reverse" class="card">
+			<h6 class="date-time-overlay yellow">
+				{{ item.createdOn | date:'MM/dd/yyyy @ h:mma' }}
+			</h6>
+			<h4>
+				Name: <strong>{{ item.name }}</strong>
 			</h4>
+			<h5 class="subheader">
+				Type: <strong>{{ item.type }}</strong>
+			</h5>
+			
 		</div> <!-- end .card -->
 	</div> <!-- end .small-10 -->
 
