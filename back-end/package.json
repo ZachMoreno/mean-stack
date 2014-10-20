@@ -3,14 +3,19 @@
   "version": "0.0.1",
   "description": "custom MEAN stack",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ZachMoreno/mean-stack.git"
   },
   "author": "Zachariah Moreno",
   "license": "MIT",
   "dependencies": {
     "body-parser": "latest",
     "express": "latest",
-    "mongoose": "latest"
+    "mongoose": "latest",
+    "passport": "latest",
+    "passport-http": "latest",
+    "passport-local": "latest"
   }
 }

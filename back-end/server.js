@@ -6,14 +6,15 @@ var express    = require('express'),
 	bodyParser = require('body-parser'),
 	port       = process.env.PORT || 7000,
 	router     = express.Router(),
+	passport   = require('passport'),
 	app        = express();
 
 // http://enable-cors.org/server_expressjs.html
 app.all('*', function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,HEAD,DELETE,OPTIONS');
-  res.header("Access-Control-Allow-Headers", "content-Type,X-Requested-With");
-  next();
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,HEAD,DELETE,OPTIONS');
+	res.header('Access-Control-Allow-Headers', 'content-Type,X-Requested-With');
+	next();
 });
 
 // parse request & response bodies with middleware
@@ -21,6 +22,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
+
+// basic passport auth strategy
+// passport.use(new BasicStrategy(
+// 	function(username, password, done) {
+// 		User.findOne({ username: username }, function (err, user) {
+// 			if (err) { return done(err); }
+// 			if (!user) { return done(null, false); }
+// 			if (!user.validPassword(password)) { return done(null, false); }
+// 			return done(null, user);
+// 		});
+// 	}
+// ));
 
 // name of REST API resource == items
 mongoose.connect('mongodb://localhost/items');
