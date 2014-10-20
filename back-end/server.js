@@ -1,13 +1,23 @@
 'use strict';
 
 // server-side dependencies
-var express    = require('express'),
-	mongoose   = require('mongoose'),
-	bodyParser = require('body-parser'),
-	port       = process.env.PORT || 7000,
-	router     = express.Router(),
-	passport   = require('passport'),
-	app        = express();
+var express        = require('express'),
+	// mongodb orm
+	mongoose       = require('mongoose'),
+	// parse response content
+	bodyParser     = require('body-parser'),
+	// parse cookie content
+	cookieParser   = require('cookie-parser'),
+	// maintain session state
+	expressSession = require('express-session'),
+	// environment
+	port           = process.env.PORT || 7000,
+	router         = express.Router(),
+	// auth
+	passport       = require('passport'),
+	passportLocal  = require('passport-local'),
+	// init app
+	app            = express();
 
 // http://enable-cors.org/server_expressjs.html
 app.all('*', function(req, res, next) {
@@ -23,17 +33,14 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 
-// basic passport auth strategy
-// passport.use(new BasicStrategy(
-// 	function(username, password, done) {
-// 		User.findOne({ username: username }, function (err, user) {
-// 			if (err) { return done(err); }
-// 			if (!user) { return done(null, false); }
-// 			if (!user.validPassword(password)) { return done(null, false); }
-// 			return done(null, user);
-// 		});
-// 	}
-// ));
+// app.use(cookieParser());
+// app.use(expressSession());
+
+// authenticate with passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 
 // name of REST API resource == items
 mongoose.connect('mongodb://localhost/items');
